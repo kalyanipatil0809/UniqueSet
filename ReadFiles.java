@@ -4,12 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Scanner;
-
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.HashSet;
-import java.util.Scanner;
 
 import org.apache.poi.ss.usermodel.Cell; 
 import org.apache.poi.ss.usermodel.Row;
@@ -27,8 +22,6 @@ public class ReadFiles {
 			System.out.println("select 2 to read the excel file");
 
 			int select= selectcase.nextInt();
-
-			int value;
 			switch (select) {
 
 			case 1:
@@ -38,7 +31,7 @@ public class ReadFiles {
 				String fileName=fileInput.nextLine();
 				File file = new File("F:\\"+fileName+".txt");
 				Scanner scanner = new Scanner(file);
-				HashSet<Integer> Hashset = new HashSet();
+				HashSet<Integer> Hashset = new HashSet<Integer>();
 
 				while(scanner.hasNext()) {
 					Hashset.add(scanner.nextInt());
@@ -56,7 +49,7 @@ public class ReadFiles {
 				Sheet sheet =workBook.getSheetAt(0);
 				int lastRowNumber=sheet.getLastRowNum();
 
-				HashSet<Integer> Uniqueset = new HashSet();
+				HashSet<Integer> Uniqueset = new HashSet<Integer>();
 
 				for(int i=0;i<=lastRowNumber;i++) {
 					Row row=sheet.getRow(i);
@@ -78,9 +71,8 @@ public class ReadFiles {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ReadFiles d=new ReadFiles();
-		d.read();
+		ReadFiles Readfiles=new ReadFiles();
+		Readfiles.read();
 	}
 
 }

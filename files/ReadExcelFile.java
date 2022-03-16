@@ -19,8 +19,6 @@ public class ReadExcelFile {
 	public void readExcel() {
 
 		Scanner fileInput = null;
-
-
 		try {
 			fileInput= new Scanner(System.in);		
 			log.info("Enter the filename: ");
